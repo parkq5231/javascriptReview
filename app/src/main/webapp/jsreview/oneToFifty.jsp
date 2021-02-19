@@ -24,7 +24,9 @@ div.innerHTML {
 			var div = document.createElement("div");
 			var span = document.createElement("span");
 			var br = document.createElement("br");
-			span.innerHTML = Math.floor((Math.random() * 50) + 1);
+			var num = Math.floor((Math.random() * 50) + 1);
+			span.id = num;
+			span.innerHTML = num;
 			div.append(span);
 			div.onclick = clickHandler
 			document.body.appendChild(div);
@@ -34,7 +36,7 @@ div.innerHTML {
 		}
 		function clickHandler(e) {
 			console.log(e.target.innerHTML, '클릭됨');
-			e.target.replace();
+			e.target.remove();
 		}
 	</script>
 </body>
